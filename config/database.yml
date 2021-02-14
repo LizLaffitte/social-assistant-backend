@@ -26,6 +26,8 @@ development:
   <<: *default
   database: social_assistant_backend_development
   host: 127.0.0.1
+  username: <%= ENV['PQSQL'] %>
+  password: <%= ENV['PQSQL_PW'] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -61,6 +63,9 @@ test:
   <<: *default
   database: social_assistant_backend_test
   host: 127.0.0.1
+  username: <%= ENV['PQSQL'] %>
+  password: <%= ENV['PQSQL_PW'] %>
+
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -85,4 +90,4 @@ production:
   <<: *default
   database: social_assistant_backend_production
   username: social_assistant_backend
-  password: <%= ENV['SOCIAL_ASSISTANT_BACKEND_DATABASE_PASSWORD'] %>
+  # password: <%= ENV['SOCIAL_ASSISTANT_BACKEND_DATABASE_PASSWORD'] %>
